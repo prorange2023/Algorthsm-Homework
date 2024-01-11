@@ -18,25 +18,36 @@
 		public class Player
 		{
 			public string name;
-			List<Item> inventory;
+			public List<Item> inventory;
 
-			void PickItem()
+			public Player(string name)
 			{
+				this.name = name;
+				inventory = new List<Item>();
+			}
 
+			void PickItem(Item item)
+			{
+				inventory.Add(item);
 			}
 		}
 		static void Main(string[] args)
 		{
-			List<Item> Inventory = new List<Item>();
+			Player red = new Player("red");
 
-			Player player = new Player();
-			player.name = "starter";
 
+			
+			
+			
 			Item potion = new Item();
 			potion.name = "potion";
 			potion.number = 5;
 
-			Inventory.Add(potion);
+			Item Goldbar = new Item();
+			Goldbar.name = "goldbar";
+			Goldbar.number = 1;
+
+			
 		}
 	}
 }
