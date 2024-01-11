@@ -32,19 +32,20 @@ namespace Algorithm03
 			public void PickItem(Item item)
 			{
 				inventory.Add(item);
-				Console.WriteLine($"{item}을 인벤토리에 넣었습니다.");
+				Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
 			}
 
 			public void ThrowItem(Item item)
 			{
 				inventory.Remove(item);
-				Console.WriteLine($"{item}을 인벤토리에서 제거했습니다.");
+				Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에서 제거했습니다.");
 			}
 
 			public void PrintList(List<Item> list)
 			{
 				for (int i = 0; i < list.Count; i++)
 				{
+					Console.WriteLine("인벤토리에 보유한 아이템입니다.");
 					Console.WriteLine($"{list[i].name}를 {list[i].number}개 보유하고있습니다");
 				}
 			}
@@ -54,7 +55,6 @@ namespace Algorithm03
 		
 		static void Main(string[] args)
 		{
-			Program program = new Program();
 			Player red = new Player("red");
 
 			Item potion = new Item();
@@ -71,6 +71,8 @@ namespace Algorithm03
 			red.PrintList(red.inventory);
 
 			red.ThrowItem(potion);
+
+			red.PrintList(red.inventory);
 		}
 	}
 }
