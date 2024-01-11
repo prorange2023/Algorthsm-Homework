@@ -10,7 +10,7 @@ namespace Algorithm03
 		{
 			public string name;
 			public int number;
-
+			// 나중에 아이템 갯수는 여기서 분리하는걸로하겠습니다.
 			void Used()
 			{
 
@@ -31,8 +31,17 @@ namespace Algorithm03
 
 			public void PickItem(Item item)
 			{
-				inventory.Add(item);
-				Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
+				if (inventory.Contains(item))
+				{
+					item.number = item.number + item.number;
+					Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
+				}
+				else
+				{
+					inventory.Add(item);
+					Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
+				}
+				
 			}
 
 			public void ThrowItem(Item item)
