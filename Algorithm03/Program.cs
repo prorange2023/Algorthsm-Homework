@@ -9,6 +9,7 @@ namespace Algorithm03
 		public class Item
 		{
 			public string name;
+			public int ea;
 			void Used()
 			{
 
@@ -29,33 +30,56 @@ namespace Algorithm03
 
 			public void PickItem(Item item)
 			{
-				//if (inventory.Contains(item))
-				//{
-				//	item.number = item.number + item.number;
-				//	Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
-				//}
-				//else
-				//{
-					
+				if (inventory.Contains(item))
+				{
+					item.ea+=2;
+					Console.WriteLine($"{item.name}을 인벤토리에 넣었습니다.");
+				}
+				else
+				{
+				
 					inventory.Add(item);
 					Console.WriteLine($"{item.name}을 인벤토리에 넣었습니다.");
-				//}
+				}
 				
 			}
 
 			public void ThrowItem(Item item)
 			{
-				inventory.Remove(item);
-				Console.WriteLine($"{item.name}을 인벤토리에서 제거했습니다.");
+				if ( inventory.Contains(item) )
+				{
+					inventory.Remove(item);
+					Console.WriteLine($"{item.name}을 인벤토리에서 제거했습니다.");
+				}
+				else
+				{
+					Console.WriteLine($"{item.name}는 인벤토리에 존재하지 않습니다.");
+				}
+				
+			}
+
+			public void UseItem(Item item, int num)
+			{
+				if (inventory.Contains(item) && item.ea > 0)
+				{
+					item.ea -= num;
+					Console.WriteLine($"{item.name}을 {num}개 사용했습니다.");
+				}
+				else
+				{
+					Console.WriteLine($"{item.name}는 인벤토리에 존재하지 않습니다.");
+				}
+
 			}
 
 			public void PrintList(List<Item> list)
 			{
+				Console.WriteLine();
 				Console.WriteLine("인벤토리에 보유한 아이템입니다.");
 				for (int i = 0; i < list.Count; i++)
 				{
 					
-					Console.WriteLine($"{list[i].name}를 보유하고있습니다");
+					Console.WriteLine($"{list[i].name}를 {list[i].ea}개 보유하고있습니다");
 				}
 			}
 
@@ -68,10 +92,12 @@ namespace Algorithm03
 
 			Item potion = new Item();
 			potion.name = "potion";
+			potion.ea = 2;
 			
 
 			Item Goldbar = new Item();
 			Goldbar.name = "goldbar";
+
 			
 
 			red.PickItem(potion);
@@ -79,6 +105,7 @@ namespace Algorithm03
 			red.PickItem(potion);
 
 			red.PrintList(red.inventory);
+			red.UseItem(potion, 3);
 
 			red.ThrowItem(potion);
 
