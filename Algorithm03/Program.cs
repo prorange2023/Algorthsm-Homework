@@ -1,4 +1,6 @@
-﻿namespace Algorithm03
+﻿using System.Collections.Generic;
+
+namespace Algorithm03
 {
 	internal class Program
 	{
@@ -24,21 +26,37 @@
 			{
 				this.name = name;
 				inventory = new List<Item>();
+
 			}
 
-			void PickItem(Item item)
+			public void PickItem(Item item)
 			{
 				inventory.Add(item);
+				Console.WriteLine($"{item}을 인벤토리에 넣었습니다.");
 			}
+
+			public void ThrowItem(Item item)
+			{
+				inventory.Remove(item);
+				Console.WriteLine($"{item}을 인벤토리에서 제거했습니다.");
+			}
+
+			public void PrintList(List<Item> list)
+			{
+				for (int i = 0; i < list.Count; i++)
+				{
+					Console.WriteLine($"{list[i].name}를 {list[i].number}개 보유하고있습니다");
+				}
+			}
+
 		}
+
+		
 		static void Main(string[] args)
 		{
+			Program program = new Program();
 			Player red = new Player("red");
 
-
-			
-			
-			
 			Item potion = new Item();
 			potion.name = "potion";
 			potion.number = 5;
@@ -47,7 +65,12 @@
 			Goldbar.name = "goldbar";
 			Goldbar.number = 1;
 
-			
+			red.PickItem(potion);
+			red.PickItem(Goldbar);
+
+			red.PrintList(red.inventory);
+
+			red.ThrowItem(potion);
 		}
 	}
 }
