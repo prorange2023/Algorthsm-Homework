@@ -9,8 +9,6 @@ namespace Algorithm03
 		public class Item
 		{
 			public string name;
-			public int number;
-			// 나중에 아이템 갯수는 여기서 분리하는걸로하겠습니다.
 			void Used()
 			{
 
@@ -31,23 +29,24 @@ namespace Algorithm03
 
 			public void PickItem(Item item)
 			{
-				if (inventory.Contains(item))
-				{
-					item.number = item.number + item.number;
-					Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
-				}
-				else
-				{
+				//if (inventory.Contains(item))
+				//{
+				//	item.number = item.number + item.number;
+				//	Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
+				//}
+				//else
+				//{
+					
 					inventory.Add(item);
-					Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에 넣었습니다.");
-				}
+					Console.WriteLine($"{item.name}을 인벤토리에 넣었습니다.");
+				//}
 				
 			}
 
 			public void ThrowItem(Item item)
 			{
 				inventory.Remove(item);
-				Console.WriteLine($"{item.name}을 {item.number}개 인벤토리에서 제거했습니다.");
+				Console.WriteLine($"{item.name}을 인벤토리에서 제거했습니다.");
 			}
 
 			public void PrintList(List<Item> list)
@@ -56,7 +55,7 @@ namespace Algorithm03
 				for (int i = 0; i < list.Count; i++)
 				{
 					
-					Console.WriteLine($"{list[i].name}를 {list[i].number}개 보유하고있습니다");
+					Console.WriteLine($"{list[i].name}를 보유하고있습니다");
 				}
 			}
 
@@ -69,11 +68,11 @@ namespace Algorithm03
 
 			Item potion = new Item();
 			potion.name = "potion";
-			potion.number = 5;
+			
 
 			Item Goldbar = new Item();
 			Goldbar.name = "goldbar";
-			Goldbar.number = 1;
+			
 
 			red.PickItem(potion);
 			red.PickItem(Goldbar);
