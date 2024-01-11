@@ -52,9 +52,10 @@ namespace Algorithm03
 
 			public void PrintList(List<Item> list)
 			{
+				Console.WriteLine("인벤토리에 보유한 아이템입니다.");
 				for (int i = 0; i < list.Count; i++)
 				{
-					Console.WriteLine("인벤토리에 보유한 아이템입니다.");
+					
 					Console.WriteLine($"{list[i].name}를 {list[i].number}개 보유하고있습니다");
 				}
 			}
@@ -76,10 +77,12 @@ namespace Algorithm03
 
 			red.PickItem(potion);
 			red.PickItem(Goldbar);
+			red.PickItem(potion);
 
 			red.PrintList(red.inventory);
 
 			red.ThrowItem(potion);
+
 
 			red.PrintList(red.inventory);
 		}

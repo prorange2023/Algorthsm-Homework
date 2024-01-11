@@ -38,7 +38,6 @@ namespace Algorithm02
 			List<int> list = new List<int>();
 			Program program = new Program();
 
-
 			list.Add(1);
 			list.Add(6);
 			list.Add(7);
