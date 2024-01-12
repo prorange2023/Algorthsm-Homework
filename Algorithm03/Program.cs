@@ -58,12 +58,12 @@ namespace List03
 				
 			}
 
-			public void UseItem(Item item)
+			public void UseItem(Item item, int num)
 			{
 				if (inventory.Contains(item) && item.ea > 0)
 				{
 					item.ea -= num;
-					Console.WriteLine($"{item.name}을 사용했습니다.");
+					Console.WriteLine($"{item.name}을 {num}개 사용했습니다.");
 				}
 				else
 				{
