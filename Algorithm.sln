@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{DDD37D6B-8181-48D5-A2AA-191B7679EECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List01", "Algorithm\List01.csproj", "{DDD37D6B-8181-48D5-A2AA-191B7679EECC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm02", "Algorithm02\Algorithm02.csproj", "{F0ECE9BD-2226-4427-A059-75D26F8E5FA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List02", "Algorithm02\List02.csproj", "{F0ECE9BD-2226-4427-A059-75D26F8E5FA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm03", "Algorithm03\Algorithm03.csproj", "{072A50E9-F772-4CF7-B5F3-F74AE1D7B009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List03", "Algorithm03\List03.csproj", "{072A50E9-F772-4CF7-B5F3-F74AE1D7B009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
