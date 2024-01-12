@@ -42,52 +42,52 @@ namespace _02_LinkedList_02
 		}
 		void Main11()
 		{
-			LinkedList<int> linkedlist = new LinkedList<int>();
-			Console.WriteLine("인원수를 입력하세요");
-			int member = int.Parse(Console.ReadLine());
-
-			for (int i = 0; i < member; i++)
-			{
-				linkedlist.AddLast(i+1);
-			}
-
-			foreach (int i in linkedlist)
-			{
-				Console.WriteLine(i);
-			}
-
-			LinkedListNode<int> head = linkedlist.First;
-			LinkedListNode<int> tail = linkedlist.Last;
-
-			Console.WriteLine($"{tail.Value}");
-			Console.WriteLine($"{head.Value}");
-
-			tail.Next = head;
-
-			if (tail.Next == null )
-			{
-				tail.next = head;
-			}
-			else
-			{
-
-			}
-
-			
-
-			Console.WriteLine("무작위 숫자를 입력하세요");
-			int deathturn = int.Parse(Console.ReadLine());
-
-
-            for (int i = 0; i < member; i++)
-            {
-				for (int j = 1; j < deathturn; j++)
-				{
-					head = head.Next;
-				}
-
-				Console.WriteLine(head.Value);
-			}
+			//LinkedList<int> linkedlist = new LinkedList<int>();
+			//Console.WriteLine("인원수를 입력하세요");
+			//int member = int.Parse(Console.ReadLine());
+			//
+			//for (int i = 0; i < member; i++)
+			//{
+			//	linkedlist.AddLast(i+1);
+			//}
+			//
+			//foreach (int i in linkedlist)
+			//{
+			//	Console.WriteLine(i);
+			//}
+			//
+			//LinkedListNode<int> head = linkedlist.First;
+			//LinkedListNode<int> tail = linkedlist.Last;
+			//
+			//Console.WriteLine($"{tail.Value}");
+			//Console.WriteLine($"{head.Value}");
+			//
+			//tail.Next = head;
+			//
+			//if (tail.Next == null )
+			//{
+			//	tail.next = head;
+			//}
+			//else
+			//{
+			//
+			//}
+			//
+			//
+			//
+			//Console.WriteLine("무작위 숫자를 입력하세요");
+			//int deathturn = int.Parse(Console.ReadLine());
+			//
+			//
+            //for (int i = 0; i < member; i++)
+            //{
+			//	for (int j = 1; j < deathturn; j++)
+			//	{
+			//		head = head.Next;
+			//	}
+			//
+			//	Console.WriteLine(head.Value);
+			//}
 
 
 
