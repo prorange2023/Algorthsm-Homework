@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Algorithm02
+namespace List02
 {
 	internal class Program
 	{
