@@ -97,7 +97,10 @@ namespace _02._LinkedList_01
 				{
 					Console.WriteLine("0은 제외하고 입력해주세요");
 				}
-				funny.PrintValue();
+				foreach (int value in linkedlist)
+				{
+					Console.WriteLine($"{value}");
+				}
 			}
 		}
 	}
