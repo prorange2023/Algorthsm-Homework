@@ -16,61 +16,106 @@
 
 
 
-		public const int WorkTime = 8;
-		public static int[] ProcessJob(int[] jobList)
+		public static bool IsOk(string text)
 		{
-			Queue<int> queue = new Queue<int>();
-			int remainTime = 8;
-			int day = 1;
-			List<int> days = new List<int>();
+			Stack<char> stack = new Stack<char>();
 
-			for (int i = 0; i < jobList.Length; i++)
+			foreach (char c in text)
 			{
-				queue.Enqueue(jobList[i]);
-			}
-
-			while (queue.Count > 0) ;
-			{
-				int workTime = queue.Dequeue();
-
-				while (true)
+				if (c == '(')
 				{
-					if (workTime < remainTime)
+					stack.Push(c);
+				}
+				else if (c == '[')
+				{
+					stack.Push(c);
+				}
+				else if (c == '{')
+				{
+					stack.Push(c);
+				}
+				else if (c == ')')
+				{
+					if (stack.Count == 0)
 					{
-						remainTime -= workTime;
+						return false;
+					}
 
-						// 작업완료
-						days.Add(day);
-						break;
+					char bracket = stack.Pop();
+					if (bracket == '(')
+					{
+						// 이건 괜찮
 					}
 					else
 					{
-						workTime -= remainTime;
-						// 다음날로 연장
-						day++;
-						remainTime = 8;
+						return false;
+					}
+				}
+				else if (c == '}')
+				{
+					if (stack.Count == 0)
+					{
+						return false;
+					}
+					char bracket = stack.Pop();
+					if (bracket == '{')
+					{
+						// 이건 괜찮
+					}
+					else
+					{
+						return false;
+					}
+				}
+				else if (c == ']')
+				{
+					if (stack.Count == 0)
+					{
+						return false;
+					}
+					char bracket = stack.Pop();
+					if (bracket == '[')
+					{
+						// 이건 괜찮
+					}
+					else
+					{
+						return false;
 					}
 				}
 
 			}
 
-			return days.ToArray();
+			if (stack.Count > 0)
+			{
+				return false;
+			}
 
+			return true;
 		}
-
-
-
 		static void Main(string[] args)
 		{
 
-			int[] result = ProcessJob(new int[] { 4, 4, 12, 10, 2, 10 });
-
-			foreach (int day in result)
+			do
 			{
-				Console.WriteLine(day);
-			}
+				string text = Console.ReadLine();
+				Console.WriteLine(IsOk(text));
+			} while (true);
+			IsOk("()()");
+			IsOk("{}");
+			IsOk("[]");
+			IsOk("[{]");
+
+
+			// stack으로 넣고 확인하다가 괄호 {[(나오는걸 확인하면
+			// 중단하고 반대편을 queue로 넣고 peek으로 엿보기
+			// peek 으로 엿봤는데 해당괄호랑 다른 괄호면 False
+			// 같은 괄호면 둘다 삭제
+			// 반복해서 남은게 없으면 True 반환
+
 
 
 		}
+
 	}
 }
