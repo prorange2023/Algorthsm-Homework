@@ -13,95 +13,62 @@
 
 		//		예시 : () 완성, (() 미완성, [) 미완성, [[(){}]] 완성
 
-		
 
 
-		static void Main()
+
+		public const int WorkTime = 8;
+		public static int[] ProcessJob(int[] jobList)
 		{
-			bool check;
-			string a = "[";
-			string b = "]";
-			string c = "{";
-			string d = "}";
-			string e = "(";
-			string f = ")";
+			Queue<int> queue = new Queue<int>();
+			int remainTime = 8;
+			int day = 1;
+			List<int> days = new List<int>();
 
-			
-
-			Queue<string> queue = new Queue<string>();
-
-			queue.Enqueue(a);
-			queue.Enqueue(b);
-			queue.Enqueue(c);
-			queue.Enqueue(d);
-			queue.Enqueue(e);
-			queue.Enqueue(f);
-
-
-			string left = queue.Dequeue();
-
-
-			
-
-
-			if (left == "(")
+			for (int i = 0; i < jobList.Length; i++)
 			{
-				if (queue.Contains(f)) 
-				{ 
-					check = true; 
-					Console.WriteLine(check);
-				}
-				else
+				queue.Enqueue(jobList[i]);
+			}
+
+			while (queue.Count > 0) ;
+			{
+				int workTime = queue.Dequeue();
+
+				while (true)
 				{
-					check = false;
-					Console.WriteLine(check);
+					if (workTime < remainTime)
+					{
+						remainTime -= workTime;
+
+						// 작업완료
+						days.Add(day);
+						break;
+					}
+					else
+					{
+						workTime -= remainTime;
+						// 다음날로 연장
+						day++;
+						remainTime = 8;
+					}
 				}
+
 			}
 
-			else if(left == "[")
-			{
-				if (queue.Contains(b)) 
-				{ 
-					check = true;
-					Console.WriteLine(check);
-				}
-				else
-				{
-					check = false;
-					Console.WriteLine(check);
-				}
-			}
-			else if(left == "{")
-			{
-				if (queue.Contains(d)) 
-				{ 
-					check = true;
-					Console.WriteLine(check);
-				}
-				else
-				{
-					check = false;
-					Console.WriteLine(check);
-				}
-			}
-			else if (left == "}")
-			{
-				check = false;
-				Console.WriteLine(check);
-			}
-			else if (left == ")")
-			{
-				check = false;
-				Console.WriteLine(check);
-			}
-			else if (left == "]")
-			{
-				check = false;
-				Console.WriteLine(check);
-			}
-			
+			return days.ToArray();
 
-			
+		}
+
+
+
+		static void Main(string[] args)
+		{
+
+			int[] result = ProcessJob(new int[] { 4, 4, 12, 10, 2, 10 });
+
+			foreach (int day in result)
+			{
+				Console.WriteLine(day);
+			}
 
 
 		}
