@@ -16,7 +16,7 @@
 			}
 		}
 
-		public void Run()
+		static void Main()
 		{
 			List<Meeting> meetings = new List<Meeting>();
 

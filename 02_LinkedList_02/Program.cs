@@ -40,8 +40,8 @@ namespace _02_LinkedList_02
 				}
 			}
 		}
-		void Main11()
-		{
+		//void Main11()
+		//{
 			//LinkedList<int> linkedlist = new LinkedList<int>();
 			//Console.WriteLine("인원수를 입력하세요");
 			//int member = int.Parse(Console.ReadLine());
@@ -94,6 +94,6 @@ namespace _02_LinkedList_02
 			
 
 
-		}
+		//}
 	}
 }

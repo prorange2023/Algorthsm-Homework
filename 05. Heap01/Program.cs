@@ -16,7 +16,7 @@
 			}
 		}
 
-		public void Run()
+		static void Main()
 		{
 			int sumScore = 0;
 			List<Homework> homeworks = new List<Homework>();
@@ -57,6 +57,8 @@
 					break;
 			}
 		}
+
+		
 	}
 
 }
