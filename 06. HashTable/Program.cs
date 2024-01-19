@@ -64,4 +64,67 @@
 			cheatKey.RunGame();
 		}
 	}
+
+
+	//public class CheatKey
+	//{
+	//	private Dictionary<string, Action> cheatDic;
+
+	//	private bool loop;
+
+	//	public event Action OnMoneyCheat;
+	//	public event Action OnWinCheat;
+
+
+	//	public CheatKey()
+	//	{
+	//		OnMoneyCheat += ShowMeTheMoney;
+	//		OnWinCheat += ThereIsNoCowLevel;
+
+	//		cheatDic = new Dictionary<string, Action>();
+
+	//		cheatDic.Add("showmethemoney", OnMoneyCheat);
+	//		cheatDic.Add("thereisnocowlevel", OnWinCheat);
+
+	//		loop = true;
+	//	}
+	//	public void Run(string str)
+	//	{
+	//		string cheatkey = str.ToLower();
+	//		cheatDic.TryGetValue(cheatkey, out Action act);
+	//		if (act != null)
+	//		{
+	//			act();
+	//		}
+	//	}
+	//	public void ShowMeTheMoney()
+	//	{
+	//		Console.WriteLine("골드를 늘려주는 치트키 발동!\n");
+	//	}
+	//	public void ThereIsNoCowLevel()
+	//	{
+	//		Console.WriteLine("바로 승리합니다 치트키 발동!\n");
+	//	}
+
+	//	public void play()
+	//	{
+	//		while (loop)
+	//		{
+	//			Console.WriteLine("채팅을 입력하세요.");
+	//			Run(Console.ReadLine());
+	//		}
+
+	//	}
+	//}
+	//internal class Program
+	//{
+
+	//	static void Main(string[] args)
+	//	{
+	//		CheatKey cheatkey = new CheatKey();
+	//		cheatkey.play();
+
+
+	//	}
+	//}
 }
