@@ -107,9 +107,10 @@ namespace _08._Sorting
 
 		}
 
-		public static void QuickSort()
+		public static void QuickSort(IList<int> list, int start, int middle, int end)
 		{
-
+			int pibut = list[0];
+			
 		}
 
 		private static void Swap(IList<int> list, int i, int j)
