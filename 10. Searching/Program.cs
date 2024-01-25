@@ -48,7 +48,7 @@
 			}
 			Console.WriteLine(answer);
 
-			]
+			
 		}
 	}
 }

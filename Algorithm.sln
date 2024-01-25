@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08. Sorting", "08. Sorting\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09. Graph", "09. Graph\09. Graph.csproj", "{6B4FD1DF-898A-4903-9224-02FBBF486F70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Searching", "10. Searching\10. Searching.csproj", "{061DE044-858E-434E-8FEA-E70DBB68239B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10. Searching", "10. Searching\10. Searching.csproj", "{061DE044-858E-434E-8FEA-E70DBB68239B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. PathFinding01", "12. PathFinding01\12. PathFinding01.csproj", "{B87B9EF2-75A4-4EEE-BEE0-FA67C61A82AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{061DE044-858E-434E-8FEA-E70DBB68239B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061DE044-858E-434E-8FEA-E70DBB68239B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061DE044-858E-434E-8FEA-E70DBB68239B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B87B9EF2-75A4-4EEE-BEE0-FA67C61A82AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87B9EF2-75A4-4EEE-BEE0-FA67C61A82AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87B9EF2-75A4-4EEE-BEE0-FA67C61A82AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87B9EF2-75A4-4EEE-BEE0-FA67C61A82AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
