@@ -25,7 +25,7 @@ namespace _12._PathFinding01
 			new Point(-1,+1), // 좌상
 			new Point(-1,-1), // 좌하
 		};
-		public static bool/*탐색이 성공하면 True 아니면 false*/ PathFinding(bool[,] tileMap/*타일맵을 요구하고*/, Point start/*시작지점지정하과*/, Point end/*끝지점지정하면*/, out List<Point> path/*경로가 나옴*/)
+		public static bool/*탐색이 성공하면 True 아니면 false*/ PathFinding(bool[,] tileMap/*타일맵을 요구하고*/, Point start/*시작지점지정하고*/, Point end/*끝지점지정하면*/, out List<Point> path/*경로가 나옴*/)
 		{
 			int ySize = tileMap.GetLength(0);
 			int xSize = tileMap.GetLength(1);
@@ -36,14 +36,14 @@ namespace _12._PathFinding01
 
 			// 0. 시작 정점을 생성하여 추가
 
-			ASNode startNode = new ASNode(start, new Point(), 0, Heruistic(end, start));
+			ASNode startNode = new ASNode(start, new Point(), 0/*이게 g*/, Heruistic(end, start));
 			nodes[startNode.pos.y, startNode.pos.x] = startNode;
-			nextPointPQ.Enqueue(startNode, startNode.f); // f가 가장 작은 정점부터 꺼내진다.
+			nextPointPQ.Enqueue(startNode, startNode.f); // f가 가장 작은 정점부터 꺼내지도록 기준 설정해주고 우선순위큐에 집어넣기.
 
 
 			while (nextPointPQ.Count > 0)
 			{
-				//지금 있는 정점들 중에서 가장 f가 낮은 정점부터 수행하도록
+				// 지금 있는 정점들 중에서 가장 f가 낮은 정점부터 수행하도록
 				// 하나씩 꺼내서 탐색하는 상황
 				// 1. 다음으로 탐색할 정점 꺼내기 : f가 가장 낮은 정점
 				ASNode nextNode = nextPointPQ.Dequeue();
@@ -73,7 +73,6 @@ namespace _12._PathFinding01
 				// 4. 탐색한 정점 주변의 정점의 점수 계산(대각선 여부에 따라 4개하거나 8개하거나)
 				for (int i = 0; i < direction.Length; i++)
 				{
-
 					int x = nextNode.pos.x + direction[i].x;
 					int y = nextNode.pos.y + direction[i].y;
 
@@ -100,7 +99,7 @@ namespace _12._PathFinding01
 						continue;
 					}
 					// 4-2 점수를 계산한 정점 만들기
-					int g = nextNode.g + i < 4? CostStraight : CostDiagonal; // 그니까 i가 4보다 작으면 i* costStraight 로 계산하고 4이상이면 i* CostDiagonal로 계산한다는 뜻인가
+					int g = nextNode.g + i < 4? CostStraight : CostDiagonal; // 삼항연산자 조건이 맞으면 CostStraight 아니면 Costdiagonal
 					int h = Heruistic(new Point(x, y), end);
 					ASNode newNode = new ASNode(new Point(x, y), nextNode.pos, g, h);
 
@@ -141,7 +140,7 @@ namespace _12._PathFinding01
 			return CostStraight * straightCount + CostDiagonal * diagonalCount;
 
 			// 다익스트라
-			//return 0;
+			//return 1;
 
 		}
 
